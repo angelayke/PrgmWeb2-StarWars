@@ -12,13 +12,7 @@ const StarWars = () => {
     const getStarWars =  async () => {
         const starwars = await starService.getStarWars();
 
-        setData(
-            await Promise.all(
-                starwars.map((starwar) =>
-                    starService.getStarWarsWithReturnedUrl(starwar.url)
-                )
-            )
-        );
+        setData(starwars);
     };
 
     useEffect(() => {
