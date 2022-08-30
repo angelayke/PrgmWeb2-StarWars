@@ -8,10 +8,10 @@ const starService = new StarService();
 
 const StarWars = () => {
     const [data, setData] = useState([]);
-
+    
     const getStarWars =  async () => {
         const starwars = await starService.getStarWars();
-
+        console.log (starwars)
         setData(starwars);
     };
 
