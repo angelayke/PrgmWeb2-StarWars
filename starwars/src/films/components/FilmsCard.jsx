@@ -7,7 +7,7 @@ const FilmsCard = ({ film }) => {
   return (
     <Col className="my-3">
       <Card>
-        <BCard.Header as="small">Blabla</BCard.Header>
+        <BCard.Header as="small">Date de sortie: {film.release_date}</BCard.Header>
         <BCard.Body>
           <BCard.Title>{film.title}</BCard.Title>
         </BCard.Body>
