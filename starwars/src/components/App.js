@@ -1,10 +1,10 @@
 import Container from "react-bootstrap/Container";
-import StarWars from "../starwars/components/StarWars";
+import Films from "../films/components/Films";
 
 function App() {
   return (
     <Container>
-      <StarWars />
+      <Films />
     </Container>
   );
 }
