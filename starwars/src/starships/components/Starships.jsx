@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import StarshipsService from "../service/StarshipsService";
 import StarshipsList from "./StarshipsList";
-import useGetData from "../../components/useGetData"
+import useGetData from "../../components/useGetData";
 
 const starshipsService = new StarshipsService();
 
@@ -13,6 +13,11 @@ const Starships = () => {
     const starships = useGetData(
         starshipsService.getStarshipsById.bind(starshipsService),
         data?.starships
+    ); 
+
+    const starshipsPilots = useGetData(
+        starshipsService.getStarshipsById.bind(starshipsService),
+        data?.pilots
     ); 
     
     const getStarships =  async () => {
