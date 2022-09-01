@@ -15,10 +15,10 @@ const Starships = () => {
         data?.starships
     ); 
 
-    const starshipsPilots = useGetData(
+    /*const starshipsPilots = useGetData(
         starshipsService.getStarshipsById.bind(starshipsService),
         data?.pilots
-    ); 
+    ); pas ici*/
     
     const getStarships =  async () => {
         const starships = await starshipsService.getStarships();
