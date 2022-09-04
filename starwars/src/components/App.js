@@ -13,7 +13,6 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Films />}/>
-          <Route path="/films/:id" element={<FilmsCard />} />
           <Route path="/films/:id" element={<IndividualFilm />} />
         </Routes>
           <Peoples />
