@@ -3,40 +3,48 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import useGetData from "../../components/useGetData";
+// services
 import FilmsService from '../service/FilmsService';
-import useGetData from "../../components/useGetData"
+import VehiclesService from '../../vehicles/service/VehiclesService';
+import StarshipsService from '../../starships/service/StarshipsService';
+import PeoplesService from '../../people/service/PeoplesService';
+// card
 import FilmsCard from './FilmsCard';
 import PeoplesCard from '../../people/components/PeoplesCard';
 import VehiclesCard from '../../vehicles/components/VehiclesCard';
 import StarshipsCard from '../../starships/components/StarshipsCard';
 
+
 const fS =  new FilmsService();
-//const peopleFilmService = new PeopleFilmService ()
+const peoplesService = new PeoplesService();
+const starshipsService = new StarshipsService();
+const vehiclesService = new VehiclesService();
 
 const IndividualFilm = () => {
     const [film, setFilm] = useState(null);
     const params = useParams();
 
-    const peoples = new peoplesFilm();
-    const vehicles = new vehiclesFilm();
-    const starships = new starshipsFilm();
+    // const peoples = new peoplesFilm();
+    // const vehicles = new vehiclesFilm();
+    // const starships = new starshipsFilm();
     const peoplesFilm = useGetData(
-        peopleFilmService.getFilmsById.bind(peopleFilmService),
+        peoplesService.getPeoplesById.bind(peoplesService),
         film?.characters
     ); 
     console.log(peoplesFilm);
 
     const starshipsFilm = useGetData(
-        starshipFilmService.getFilmsById.bind(starshipFilmService),
+        starshipsService.getStarshipsById.bind(starshipsService),
         film?.starship
     ); 
     console.log(starshipsFilm);
 
     const vehiclesFilm = useGetData(
-        vehicleFilmService.getFilmsById.bind(vehicleFilmService),
+        vehiclesService.getVehiclesById.bind(vehiclesService),
         film?.vehicle
     ); 
-    console.log(peoplesFilm);
+    console.log(vehiclesFilm);
 
     const getFilmById = async () => {
         if (params.id) {

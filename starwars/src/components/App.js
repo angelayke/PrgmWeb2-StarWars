@@ -15,12 +15,7 @@ function App() {
           <Route path="/" element={<Films />}/>
           <Route path="/films/:id" element={<IndividualFilm />} />
         </Routes>
-          <Peoples />
-          
-          <Vehicles />
-        
-          <Starships />
-        
+
       </Container>
     </BrowserRouter>
   );

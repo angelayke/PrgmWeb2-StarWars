@@ -10,7 +10,7 @@ const FilmsCard = ({ film }) => {
         <Card>
           <BCard.Header as="small">Date de sortie: {film.release_date}</BCard.Header>
           <BCard.Body>
-            <Link to={`/films/${film.id}`} /* Je me demande si ici je ne devrais pas plutot mettre un lien du genre /films/FicheFilm/ */>
+            <Link to={`/films/${film.episode_id}`}>
               <BCard.Title>{film.title}</BCard.Title>
             </Link>
           </BCard.Body>
