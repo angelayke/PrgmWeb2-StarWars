@@ -25,30 +25,31 @@ const IndividualFilm = () => {
     const [film, setFilm] = useState(null);
     const params = useParams();
 
-    // const peoples = new peoplesFilm();
-    // const vehicles = new vehiclesFilm();
-    // const starships = new starshipsFilm();
+    
     const peoplesFilm = useGetData(
         peoplesService.getPeoplesById.bind(peoplesService),
-        film?.characters
+        film?.name
     ); 
     console.log(peoplesFilm);
 
+   
     const starshipsFilm = useGetData(
         starshipsService.getStarshipsById.bind(starshipsService),
-        film?.starship
+        film?.starships
     ); 
     console.log(starshipsFilm);
 
+   
     const vehiclesFilm = useGetData(
         vehiclesService.getVehiclesById.bind(vehiclesService),
-        film?.vehicle
+        film?.vehicles
     ); 
     console.log(vehiclesFilm);
 
     const getFilmById = async () => {
-        if (params.id) {
-            setFilm(await fS.getFilmById(params.id));
+        if (params.episode_id) {
+            setFilm(await fS.getFilmById(params.episode_id));
+            console.log(getFilmById);
         }
     }
 
@@ -59,7 +60,9 @@ const IndividualFilm = () => {
     if (!film) {
         return null;
     }
-    
+    const peoples = new peoplesFilm();
+    const starships = new starshipsFilm();
+    const vehicles = new vehiclesFilm();
 
     return (
         <>
@@ -77,7 +80,7 @@ const IndividualFilm = () => {
             <StarshipsCard starships={starshipsFilm}></StarshipsCard>
 
             <h3>Vehicles</h3>
-            <VehiclesCard vehicles={vehiclesFilm}></VehiclesCard>
+            <VehiclesCard vehicles={vehiclesFilm}></VehiclesCard>    
 
         </Col>
     </Row>
