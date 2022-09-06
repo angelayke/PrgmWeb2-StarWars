@@ -1,19 +1,19 @@
 class StarshipsService {
     constructor() { }
 
-    url = "https://swapi.dev/api/starships/";
+    url = "https://swapi.dev/api/starships";
 
     async getStarships() {
-        try {
-            const response = await fetch(this.url);
-			if (!response.ok) throw new Error(response.status);
+            try {
+                const response = await fetch(this.url);
+                if (!response.ok) throw new Error(response.status);
 
-			return (await response.json()).results;/**/
-		} catch (e) {
-			console.error(e);
+                return (await response.json()).results;/**/
+            } catch (e) {
+                console.error(e);
 
-			return [];
-		}
+                return [];
+            }
         }
 
         async getStarshipsWithReturnedUrl(url) {

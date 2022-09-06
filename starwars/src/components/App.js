@@ -5,7 +5,6 @@ import Vehicles from "../vehicles/components/Vehicles";
 import Peoples from "../people/components/Peoples";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import IndividualFilm from "../films/components/IndividualFilm";
-import FilmsCard from "../films/components/FilmsCard";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Films />}/>
-          <Route path="/films/:id" element={<IndividualFilm />} />
+          <Route path="/films/:episode_id" element={<IndividualFilm />} />
         </Routes>
 
       </Container>
