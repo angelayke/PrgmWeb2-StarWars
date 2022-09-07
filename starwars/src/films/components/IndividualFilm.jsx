@@ -68,7 +68,7 @@ const IndividualFilm = () => {
                     <PeoplesList peoples={people}/>
 
                     <h2>Vehicles in this film</h2>
-                   <VehiclesList vehicles={vehicle}/>
+                    <VehiclesList vehicles={vehicle}/>
                     
                     <h2>Starships in this film</h2>
                     <StarshipsList starships={starship}/>

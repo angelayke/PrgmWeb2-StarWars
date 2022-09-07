@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import useGetData from "../../components/useGetData";
+import Table from 'react-bootstrap/Table';
 // services
 import PeoplesService from '../service/PeoplesService';
 import VehiclesService from '../../vehicles/service/VehiclesService';
@@ -56,7 +57,51 @@ const IndividualPeople = () => {
     }
 
     return (
-        <PeoplesCard people={people}></PeoplesCard>
+       
+        <>       
+            <Row>
+                <Col className='my-3'>
+                    <h1>Personnage</h1>
+                    <h2 className='text-center'>{people.name}</h2>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>Année de naissance</th>
+                                <td>{people.birth_year}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Couleur des yeux</th>
+                                <td>{people.eye_color}</td>
+                            </tr>
+                            <tr>
+                                <th>Couleur des cheveux</th>
+                                <td>{people.hair_color}</td>
+                            </tr>
+                            <tr>
+                                <th>Poids</th>
+                                <td>{people.mass}</td>
+                            </tr>
+                            <tr>
+                                <th>Couleur de peau</th>
+                                <td>{people.skin_color}</td>
+                            </tr>
+                        </tbody>
+                    </Table>
+
+                    <h2>Apparition</h2>
+                    <FilmsList films={film}/>
+
+                    <h2>Vehicules utilisés</h2>
+                   <VehiclesList vehicles={vehicle}/>
+                    
+                    <h2>Vaisseaux spatiaux</h2>
+                    <StarshipsList starships={starship}/>
+                    
+                </Col>
+            </Row>
+        </>
     )
 
 }
