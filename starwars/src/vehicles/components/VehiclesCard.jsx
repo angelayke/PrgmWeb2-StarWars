@@ -3,13 +3,14 @@ import Card from "../../components/Card";
 import BCard from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import getUrlId from '../../components/getUrlId';
 
 const VehiclesCard = ({ vehicle }) => {
   return (
     <Col className="my-3">
       <Card>
         <BCard.Header as="small">
-        <Link to={`/vehicles/${vehicle.id}`}>
+        <Link to={`/vehicles/${getUrlId(vehicle.url)}`}>
           <BCard.Title>{vehicle.name}</BCard.Title>
         </Link>
             <BCard.Subtitle className="mb-2 text-muted">Modèle: {vehicle.model}</BCard.Subtitle>

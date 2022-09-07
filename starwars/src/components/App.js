@@ -6,6 +6,8 @@ import Peoples from "../people/components/Peoples";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import IndividualFilm from "../films/components/IndividualFilm";
 import IndividualPeople from "../people/components/IndividualPeople";
+import IndividualVehicle from "../vehicles/components/IndividualVehicle";
+import IndividualStarship from "../starships/components/IndividualStarship";
 
 function App() {
   return (

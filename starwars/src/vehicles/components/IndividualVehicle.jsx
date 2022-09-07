@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Table from "react-bootstrap/Table";
 import useGetData from "../../components/useGetData";
 // services
 import VehiclesService from '../service/VehiclesService';
@@ -22,12 +23,12 @@ const IndividualVehicle = () => {
 
     const film = useGetData(
         filmsService.getFilmsById.bind(filmsService),
-        starship?.films
+        vehicle?.films
     );
 
     const people = useGetData(
         peoplesService.getPeoplesById.bind(peoplesService),
-        film?.pilots
+        vehicle?.pilots
     ); 
 
     const getVehicleById = async () => {
