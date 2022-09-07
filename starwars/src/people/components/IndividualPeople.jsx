@@ -9,14 +9,13 @@ import Table from 'react-bootstrap/Table';
 import PeoplesService from '../service/PeoplesService';
 import VehiclesService from '../../vehicles/service/VehiclesService';
 import StarshipsService from '../../starships/service/StarshipsService';
-import FilmsService from '../../service/FilmsService';
+import FilmsService from '../../films/service/FilmsService';
 //List
-import PeoplesList from "../people/components/PeoplesList";
+
 import VehiclesList from "../../vehicles/components/VehiclesList";
 import StarshipsList from "../../starships/components/StarshipsList";
 import FilmsList from "../../films/components/FilmsList";
 
-import PeoplesCard from './PeoplesCard';
 
 const pS = new PeoplesService();
 const starshipsService = new StarshipsService();
