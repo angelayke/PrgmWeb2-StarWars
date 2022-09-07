@@ -16,6 +16,10 @@ function App() {
           <Route path="/films/:episode_id" element={<IndividualFilm />} />
           <Route path="/people" element={<Peoples />}/>
           <Route path="/people/:name" element={<IndividualPeople />} />
+          <Route path="/vehicles" element={<Vehicles />}/>
+          <Route path="/vehicles/:name" element={<IndividualVehicle />} />
+          <Route path="/starships" element={<Starships />}/>
+          <Route path="/starships/:name" element={<IndividualStarship />} />
         </Routes>
 
       </Container>

@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import useGetData from "../../components/useGetData";
-import getUrlId from '../../components/getUrlId';
+
 // services
 import FilmsService from '../service/FilmsService';
 import VehiclesService from '../../vehicles/service/VehiclesService';

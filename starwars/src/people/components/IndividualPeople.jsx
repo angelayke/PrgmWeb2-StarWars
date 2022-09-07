@@ -11,7 +11,6 @@ import VehiclesService from '../../vehicles/service/VehiclesService';
 import StarshipsService from '../../starships/service/StarshipsService';
 import FilmsService from '../../films/service/FilmsService';
 //List
-
 import VehiclesList from "../../vehicles/components/VehiclesList";
 import StarshipsList from "../../starships/components/StarshipsList";
 import FilmsList from "../../films/components/FilmsList";
