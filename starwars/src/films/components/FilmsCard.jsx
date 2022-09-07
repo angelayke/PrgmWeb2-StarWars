@@ -3,6 +3,7 @@ import Card from "../../components/Card";
 import BCard from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
+import getUrlId from '../../components/getUrlId';
 
 const FilmsCard = ({ film }) => {
   return (
@@ -10,7 +11,7 @@ const FilmsCard = ({ film }) => {
         <Card>
           <BCard.Header as="small">Date de sortie: {film.release_date}</BCard.Header>
           <BCard.Body>
-            <Link to={`/films/${film.episode_id}`}>
+            <Link to={`/films/${getUrlId(film.url)}`}>
               <BCard.Title>{film.title}</BCard.Title>
             </Link>
           </BCard.Body>
