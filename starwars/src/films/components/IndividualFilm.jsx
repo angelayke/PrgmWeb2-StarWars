@@ -11,6 +11,10 @@ import FilmsService from '../service/FilmsService';
 import VehiclesService from '../../vehicles/service/VehiclesService';
 import StarshipsService from '../../starships/service/StarshipsService';
 import PeoplesService from '../../people/service/PeoplesService';
+//List
+import PeoplesList from "../../people/components/PeoplesList";
+import VehiclesList from "../../vehicles/components/VehiclesList";
+import StarshipsList from "../../starships/components/StarshipsList";
 
 
 const fS = new FilmsService();
@@ -27,8 +31,6 @@ const IndividualFilm = () => {
         peoplesService.getPeoplesById.bind(peoplesService),
         film?.characters
     ); 
-
-    console.log(getUrlId);
 
     const starship = useGetData(
         starshipsService.getStarshipsById.bind(starshipsService),
@@ -53,10 +55,6 @@ const IndividualFilm = () => {
         return null;
     }
 
- 
-    // const peoples = new peoplesFilm();
-    // const starships = new starshipsFilm();
-    // const vehicles = new vehiclesFilm();
 
     return (
        <>       
@@ -67,19 +65,14 @@ const IndividualFilm = () => {
                     <p className='text-center'>{film.opening_crawl}</p>
 
                     <h2>Peoples in this film</h2>
-                    <Link to={`/film/${people.name}`}>
-                        <h3>{people.name}</h3>
-                    </Link>
+                    <PeoplesList peoples={people}/>
 
                     <h2>Vehicles in this film</h2>
-                    <Link to={`/film/${film.episode_id}`}>
-                        <h3>{vehicle.name}</h3>
-                    </Link>
+                   <VehiclesList vehicles={vehicle}/>
                     
                     <h2>Starships in this film</h2>
-                    <Link to={`/film/${film.episode_id}`}>
-                        <h3>{starship.name}</h3>
-                    </Link>
+                    <StarshipsList starships={starship}/>
+                    
                 </Col>
             </Row>
         </>

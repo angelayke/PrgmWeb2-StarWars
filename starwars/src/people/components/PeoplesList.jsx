@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row"
 const PeoplesList = ({ peoples }) => {
   return (
     <Row>
-      <h1>Peoples</h1>
+      <h3>Peoples</h3>
         {peoples.map((people) => (
             <PeoplesCard key={people.name} people={people} />
         )

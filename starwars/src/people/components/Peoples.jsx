@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import PeoplesService from "../service/PeoplesService";
 import PeoplesList from "./PeoplesList";
-import useGetData from "../../components/useGetData"
+import useGetData from "../../components/useGetData";
 
 const peoplesService = new PeoplesService();
 

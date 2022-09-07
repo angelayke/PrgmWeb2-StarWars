@@ -12,10 +12,9 @@ const StarshipsCard = ({ starship }) => {
         <Link to={`/starships/${starship.id}`}>
           <BCard.Title>{starship.name}</BCard.Title>
         </Link>
-            <BCard.Subtitle className="mb-2 text-muted">Modèle: {starship.model}</BCard.Subtitle>
         </BCard.Header>
         <BCard.Body>
-          <BCard.Text>Pilote: {starship.pilots}</BCard.Text>
+        <BCard.Subtitle className="mb-2 text-muted">Modèle: {starship.model}</BCard.Subtitle>
         </BCard.Body>
       </Card>
     </Col>
