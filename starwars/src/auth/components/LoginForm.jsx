@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import BsForm from "react-bootstrap/Form";
-import Input from "./Input";
+import Input from "../../components/Input";
 import Button from "react-bootstrap/Button";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import useEmailPasswordSignin from "./hooks/useEmailPasswordSignin";
-import useGoogleSignin from "./hooks/useGoogleSignin";
+import useEmailPasswordSignin from "../hooks/useEmailPasswordSignin";
+import useGoogleSignin from "../hooks/useGoogleSignin";
 
 const initialValues = { email: "", password: "" };
 const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;

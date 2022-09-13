@@ -7,7 +7,7 @@ const Input = ({ label, id, type = "text", ...rest }) => {
     const isError = meta.touched && meta.error;
 
   return (
-    <Form.FormGroup>
+    <Form.Group>
         {label && <Form.Label htmlFor={id}>{label}</Form.Label>}
         <Form.Control
             isInvalid={isError}
@@ -17,7 +17,7 @@ const Input = ({ label, id, type = "text", ...rest }) => {
         {isError && (
             <Form.Control.Feedback>{meta.error}</Form.Control.Feedback>
         )}
-    </Form.FormGroup>
+    </Form.Group>
   );
 };
 

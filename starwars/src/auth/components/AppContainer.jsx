@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import AuthService from "../auth/service/auth-service";
+import AuthService from "../service/auth-service";
 import { updateWholeUser } from "../store/authSlice";
 import { useEffect } from "react";
 
