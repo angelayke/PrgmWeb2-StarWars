@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap/Container";
 import BsForm from "react-bootstrap/Form";
 import Input from "./Input";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { Formik, Form } from "formik";
+import * as Yup from "yup";
 
 const initialValues = { email: "", password: "" };
-
+const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+const pwMatchError = "Entrez un mot de passe valide";
+const requiredFieldError = "Ce champs est requis";
+const valideEmailError = "Entrez une adresse email valide";
 
 const LoginForm = () => {
     //On crée un état qui contiendra un objet. Cet objet sera les valeurs initiales de notre formulaire
@@ -39,6 +40,14 @@ const LoginForm = () => {
         initialValues={initialValues}
         onSubmit={onSubmit}
         validateOnChange
+        validationSchema={Yup.object({
+            email: Yup.string()
+                .required(requiredFieldError)
+                .email(valideEmailError),
+            password: Yup.string()
+                .required(requiredFieldError)
+                .matches(regex, pwMatchError),
+        })}
         >
             <Form as={BsForm} noValidate>
             <Input id="email" label="Email" type="email" />
