@@ -4,6 +4,8 @@ import Input from "./Input";
 import Button from "react-bootstrap/Button";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import useEmailPasswordSignin from "./hooks/useEmailPasswordSignin";
+import useGoogleSignin from "./hooks/useGoogleSignin";
 
 const initialValues = { email: "", password: "" };
 const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -12,6 +14,10 @@ const requiredFieldError = "Ce champs est requis";
 const valideEmailError = "Entrez une adresse email valide";
 
 const LoginForm = () => {
+    const signinWithEmailAndPassword = useEmailPasswordSignin();
+    const signinWithGoogle = useGoogleSignin();
+
+
     //On crée un état qui contiendra un objet. Cet objet sera les valeurs initiales de notre formulaire
     const [formData, setFormData] = useState({
         email: "",
@@ -29,10 +35,11 @@ const LoginForm = () => {
     };
 
     const onSubmit = (values) => {
+        signinWithEmailAndPassword(values.email, values.password);
         //Important pour que la page ne rafraichisse pas
-        event.preventDefault();
+        //event.preventDefault();
         //On fait notre logique au submit ici
-        console.log(values);
+        //console.log(values);
     }
 
     return (
@@ -50,9 +57,10 @@ const LoginForm = () => {
         })}
         >
             <Form as={BsForm} noValidate>
-            <Input id="email" label="Email" type="email" />
-            <Input id="password" label="Password" type="password" />
-            <Button type="submit">Connexion</Button>
+                <Input id="email" label="Email" type="email" />
+                <Input id="password" label="Password" type="password" 
+                        autoComplete="current-password" />
+                <Button onClick={signinWithGoogle} type="button" variant="danger">Connexion avec Google</Button>
             </Form>
         </Formik>
     );
