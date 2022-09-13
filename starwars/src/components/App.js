@@ -9,8 +9,7 @@ import IndividualPeople from "../people/components/IndividualPeople";
 import IndividualVehicle from "../vehicles/components/IndividualVehicle";
 import IndividualStarship from "../starships/components/IndividualStarship";
 import AppContainer from "../auth/components/AppContainer";
-import store from "../store/store";
-import { Provider } from "react-redux";
+
 
 function App() {
   return (
