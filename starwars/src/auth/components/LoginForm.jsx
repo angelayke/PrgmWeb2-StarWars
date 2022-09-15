@@ -46,6 +46,7 @@ const LoginForm = () => {
     }
 
     return (
+        <>
         <Formik 
         initialValues={initialValues}
         onSubmit={onSubmit}
@@ -65,11 +66,13 @@ const LoginForm = () => {
                 <Input id="password" label="Password" type="password" 
                         autoComplete="current-password" />
                 
-                <Button onClick={signinWithEmailAndPassword} type="button" variant="primary">Connexion</Button>
+                <Button onClick={signinWithEmailAndPassword} type="submit" variant="primary">Connexion</Button>
                 <br />
-                <Button onClick={signinWithGoogle} type="button" variant="danger">Me connecter avec Google</Button>
+                
             </Form>
         </Formik>
+        <Button onClick={signinWithGoogle} type="button" variant="danger">Me connecter avec Google</Button>
+        </>
     );
 };
 
