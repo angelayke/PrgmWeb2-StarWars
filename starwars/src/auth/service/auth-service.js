@@ -10,7 +10,8 @@ import {
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup,
-    signOut
+    signOut,
+    browserPopupRedirectResolver
 } from "firebase/auth";
 class AuthService {
     configs = {
@@ -22,10 +23,10 @@ class AuthService {
         appId: process.env.REACT_APP_APP_ID,
         measurementId: process.env.REACT_APP_MEASUREMENT_ID
     }
-    auth = initializeAuth(this.app());
-    constructor() {
-        console.log(this.auth)
-    }
+    constructor() {}
+    auth = initializeAuth(this.app(), {
+        popupRedirectResolver: browserPopupRedirectResolver,
+    });
     app() {
         return getApps().length ? getApp() : initializeApp(this.configs);
     }
@@ -41,6 +42,8 @@ class AuthService {
         } catch (error) {
             if (error.code === "auth/user-not-found") {
                 this.signupWithEmailAndPassword(email, password)
+            } else {
+                console.error(error);
             }
         }
     }

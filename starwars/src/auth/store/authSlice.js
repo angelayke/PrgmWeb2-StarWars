@@ -18,6 +18,7 @@ export const {
     updateEmail,
     updateName,
     updateWholeUser,
+    resetUser
     } = authSlice.actions;
 
 export default authSlice.reducer;
