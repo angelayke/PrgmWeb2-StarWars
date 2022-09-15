@@ -66,7 +66,8 @@ const LoginForm = () => {
                         autoComplete="current-password" />
                 
                 <Button onClick={signinWithEmailAndPassword} type="button" variant="primary">Connexion</Button>
-                <Button onClick={signinWithGoogle} type="button" variant="danger">Connexion avec Google</Button>
+                <br />
+                <Button onClick={signinWithGoogle} type="button" variant="danger">Me connecter avec Google</Button>
             </Form>
         </Formik>
     );
