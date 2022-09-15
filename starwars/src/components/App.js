@@ -9,7 +9,10 @@ import IndividualPeople from "../people/components/IndividualPeople";
 import IndividualVehicle from "../vehicles/components/IndividualVehicle";
 import IndividualStarship from "../starships/components/IndividualStarship";
 import AppContainer from "../auth/components/AppContainer";
-import AuthLayout from "../auth/components/authLayout";
+import AuthLayout from "../auth/components/AuthLayout";
+import User from "../auth/components/User";
+import NotFound from "../components/NotFound";
+
 
 
 function App() {
@@ -19,7 +22,7 @@ function App() {
         <Container>
           <User />
           <Routes>
-            <Route path="login" element={<AuthLayout />} />
+            <Route path="/login" element={<AuthLayout />} />
             <Route path="/" element={<Films />}/>
             <Route path="/films/:episode_id" element={<IndividualFilm />} />
             <Route path="/people" element={<Peoples />}/>
@@ -28,6 +31,7 @@ function App() {
             <Route path="/vehicles/:name" element={<IndividualVehicle />} />
             <Route path="/starships" element={<Starships />}/>
             <Route path="/starships/:name" element={<IndividualStarship />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Container>
       </AppContainer>
