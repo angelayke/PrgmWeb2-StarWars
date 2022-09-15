@@ -15,7 +15,7 @@ const Input = ({ label, id, type = "text", ...rest }) => {
             {...field}
             {...rest} />
         {isError && (
-            <Form.Control.Feedback>{meta.error}</Form.Control.Feedback>
+            <Form.Control.Feedback type='invalid'>{meta.error}</Form.Control.Feedback>
         )}
     </Form.Group>
   );
