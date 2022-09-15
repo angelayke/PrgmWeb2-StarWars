@@ -9,6 +9,7 @@ import IndividualPeople from "../people/components/IndividualPeople";
 import IndividualVehicle from "../vehicles/components/IndividualVehicle";
 import IndividualStarship from "../starships/components/IndividualStarship";
 import AppContainer from "../auth/components/AppContainer";
+import AuthLayout from "../auth/components/authLayout";
 
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
     <BrowserRouter>
       <AppContainer>
         <Container>
+          <User />
           <Routes>
+            <Route path="login" element={<AuthLayout />} />
             <Route path="/" element={<Films />}/>
             <Route path="/films/:episode_id" element={<IndividualFilm />} />
             <Route path="/people" element={<Peoples />}/>
