@@ -1,29 +1,13 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import FilmsService from "../service/FilmsService";
 import FilmsList from "./FilmsList";
-import useGetData from "../../components/useGetData"
+
+import useFetchFilms from "../hooks/useFetchFilms";
 
 const filmsService = new FilmsService();
 
 const Films = () => {
-    const [data, setData] = useState([]);
-    //hook personnalisé mathieu
-    const films = useGetData(
-        filmsService.getFilmsById.bind(filmsService),
-        data?.films
-    ); 
-    //
-    const getFilms =  async () => {
-        const films = await filmsService.getFilms();
-        console.log (films)
-        setData(films);
-    };
-
-    useEffect(() => {
-        getFilms();
-      }, []);
+    const data = useFetchFilms();
 
   return <FilmsList films={data} />; 
 }
